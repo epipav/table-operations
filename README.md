@@ -1,19 +1,19 @@
 # table-operations
 Back end: symfony, front-end: vue 
-Used dependencies
+Used dependencies:
 
-NPM
-vue and its components
-jquery
+NPM:
+vue and its components,
+jquery,
 axios
 
-Composer
-FOSElastica -> for elasticsearch operations
-doctrine
-symfony
-twig
-doctrine:dbal
-doctrine:fixtures-bundle
+Composer:
+FOSElastica -> for elasticsearch operations,
+doctrine,
+symfony,
+twig,
+doctrine:dbal,
+doctrine:fixtures-bundle,
 
 - I uploaded package files as well, docker build was installing them very slow, copying the files seemed a better approach just for this case.
 
