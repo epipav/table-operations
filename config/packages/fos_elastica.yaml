@@ -1,0 +1,28 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/setup.md
+fos_elastica:
+    clients:
+        default: { host: elasticsearch, port: 9200 }
+    indexes:
+        app: 
+            types:
+                products:
+                        properties:
+                            id: ~
+                            gtin: ~
+                            product_name: ~
+                            product_desc: ~
+                            price: ~
+                            currency: ~
+                            category: ~
+                            gender: ~
+                            quantity: ~
+                            size: ~
+                            color: ~
+                            url: ~
+                            image: ~
+                            image_additional: ~
+                            additional: ~
+                            source_video: ~
+                        persistence:
+                            driver: orm
+                            model: App\Entity\Product
