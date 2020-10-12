@@ -27,7 +27,7 @@ services:
                  bin/console fos:elastica:populate &&
                  symfony serve"
     
-    image: anilbostanci/table-operations:0.0.22
+    image: anilbostanci/table-operations:0.1.0
     ports:
         - "8000:8000"
     working_dir: /table-operations

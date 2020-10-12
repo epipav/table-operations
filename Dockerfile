@@ -33,39 +33,36 @@ WORKDIR /table-operations
 
 RUN php -m
 
+#COPY ./composer.json composer.json
+#COPY ./composer.lock composer.lock
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-
-RUN composer global require hirak/prestissimo
+#RUN composer global require hirak/prestissimo
 
 #RUN composer install --no-scripts --no-interaction --no-autoloader --no-dev --prefer-dist
 #RUN npm install
-COPY ./package.json package.json
-RUN npm install
-
-COPY ./composer.json composer.json
-COPY ./composer.lock composer.lock
-RUN composer install --no-scripts --no-interaction --no-autoloader --no-dev --prefer-dist 
-#RUN composer require symfony/maker-bundle --dev
-RUN composer dump-autoload
 
 
-COPY ./assets assets
-COPY ./config config
-COPY ./src src
-COPY ./templates templates
-COPY ./.env .env
-COPY ./wait-for-it.sh wait-for-it.sh
-COPY ./bin/console bin/console
+#COPY ./assets assets
+#COPY ./config config
+#COPY ./src src
+#COPY ./templates templates
+#COPY ./.env .env
 #
-COPY ./webpack.config.js webpack.config.js
+#COPY ./package.json package.json
+#COPY ./webpack.config.js webpack.config.js
 
-#COPY ./ /table-operations/
+COPY ./ /table-operations/
 COPY ./.env /table-operations/.env
 
 
 
+#RUN composer symfony/debug-bundle --dev
+#RUN ls
+#RUN cat .env
+#RUN printenv APP_ENV
+#RUN composer require server --dev
 #build vue project
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
 
