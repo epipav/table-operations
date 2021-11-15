@@ -1,2 +1,3 @@
 var/cache/*
 docker-compose.yaml
+node_modules/
