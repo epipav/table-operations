@@ -1,0 +1,63 @@
+version: '3'
+
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.8.3 # 6.8.4 out
+    ports:
+      - "9209:9200"
+    environment:
+        - "discovery.type=single-node"
+        - "bootstrap.memory_lock=true"
+        - "ES_JAVA_OPTS=-Xms1G -Xmx1G"
+        - "xpack.security.enabled=false"
+        - "http.cors.enabled=true"
+        - "http.cors.allow-origin=*"
+    networks:
+      - table-operations-net
+
+  table-operations:
+    build:
+        context: ./
+        dockerfile: Dockerfile
+    command:  > 
+          sh -c "
+                 ./wait-for-it.sh "http://elasticsearch:9200" &&
+                 bin/console doctrine:fixtures:load -n  &&
+                 bin/console fos:elastica:populate &&
+                 symfony serve"
+    
+    image: anilbostanci/table-operations:0.1.0
+    ports:
+        - "8000:8000"
+    working_dir: /table-operations
+    environment: 
+      - APP_ENV=dev
+    depends_on: 
+      - mariadb
+      - elasticsearch
+    networks:
+      - table-operations-net
+
+    #volumes:
+    #  - /home/anil/Documents/table-operations:/table-operations
+
+
+  mariadb:
+    image: mariadb
+    command: --init-file /data/application/init.sql
+    ports:
+      - "3306:3306"
+    environment:
+        MYSQL_ALLOW_EMPTY_PASSWORD: 1 
+    volumes:
+      - ./init.sql:/data/application/init.sql
+      - db_data_maria:/var/lib/mysql
+    networks:
+      - table-operations-net
+
+volumes:
+  db_data_maria:
+
+networks:
+  table-operations-net:
