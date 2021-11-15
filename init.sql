@@ -20,7 +20,7 @@ USE `table_operations`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int NOT NULL AUTO_INCREMENT,
   `gtin` varchar(255) DEFAULT NULL,
-  `product_name` varchar(200) DEFAULT NULL,
+  `product_name` text DEFAULT NULL,
   `product_desc` text,
   `price` float DEFAULT NULL,
   `currency` varchar(200) DEFAULT NULL,

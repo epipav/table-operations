@@ -51,7 +51,7 @@ class TableController extends AbstractController
         ]);*/
         $parameters = json_decode($request->getContent(), true);
         $q = $parameters["q"];
-        $results = !empty($q) ? $productFinder->findHybrid($q,$limit=5000) : [];
+        $results = !empty($q) ? $productFinder->findHybrid('*'.$q.'*',$limit=5000) : [];
         $session->set('q', $q);
 
         $products = [];
