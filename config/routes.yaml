@@ -1,0 +1,39 @@
+login:
+    path: /api/login
+    controller: App\Controller\LoginController::login
+    methods: POST
+    requirements:
+        wildcard: .*
+
+login-index:
+    path: /login
+    controller: App\Controller\LoginController::index
+    methods: GET
+    requirements:
+        wildcard: .*
+
+api:
+    path: /api/tables
+    controller: App\Controller\TableController::getTable
+    methods: GET
+    requirements:
+        wildcard: .*
+
+search:
+    path: /api/search
+    controller: App\Controller\TableController::search
+    methods: POST
+    requirements:
+        wildcard: .*
+
+index:
+    path: /home
+    controller: App\Controller\HomeController::index
+    requirements:
+        wildcard: .*
+
+table:
+    path: /table
+    controller: App\Controller\TableController::index
+    requirements:
+        wildcard: .*
