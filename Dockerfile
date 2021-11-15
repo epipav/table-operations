@@ -70,4 +70,5 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
     install-php-extensions pdo_mysql
 
 RUN chmod a+x wait-for-it.sh
-RUN npm run dev
+
+RUN npm install && npm run dev
