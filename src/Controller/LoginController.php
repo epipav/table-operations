@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\DBAL\Connection;
 
 
@@ -23,9 +24,6 @@ class LoginController extends AbstractController
 
     public function login(Request $request,Connection $connection)
     {
-        /*return $this->render('table/index.html.twig', [
-            'controller_name' => 'TableController',
-        ]);*/
         $parameters = json_decode($request->getContent(), true);
         $passphrase = $parameters["passphrase"];
         if ($passphrase === "mypass"){
@@ -37,6 +35,5 @@ class LoginController extends AbstractController
         }
 
         return $response;
-        //return new JsonResponse(["1"=>"aaa","2"=>"bbb"]);
     }
 }
