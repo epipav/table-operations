@@ -2,7 +2,19 @@
 - Back end: symfony
 - Front end: vue 
 
-Dependencies
+
+Contains 3 containers
+- mysql
+- elasticsearch server
+- symfony app + vue app
+
+
+Handles very basic login for /table endpoint to elaborate routing.
+Password is *mypass*
+
+Table search is wildcard in all columns.
+
+## Dependencies
 
 NPM:
 - vue and its components
@@ -17,17 +29,10 @@ Composer:
 - doctrine:dbal
 - doctrine:fixtures-bundle
 
-Usage: *docker-compose up* 
+Usage:
+ ```docker-compose up``` 
 
 Builds the project, populates fixtures, populates elasticsearch
+App will be available at *http://127.0.0.1:8000/table*
 
-Contains 3 containers
-- mysql
-- elasticsearch server
-- symfony app + vue app
 
-To go to the app please visit http://127.0.0.1:8000/table
-Handles very basic login for /table endpoint to elaborate routing.
-Password is *mypass*
-
-Table search is wildcard in all columns.
