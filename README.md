@@ -35,7 +35,7 @@ Composer:
 Usage:
  ```docker-compose up``` 
 
-Builds the project, populates fixtures, populates elasticsearch.
+Builds the project, populates mariadb, populates elasticsearch.
 
 App will be available at *http://127.0.0.1:8000/table*
 
