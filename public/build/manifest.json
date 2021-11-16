@@ -1,9 +1,0 @@
-{
-  "build/app.js": "/build/app.js",
-  "build/bootstrap.js": "/build/bootstrap.js",
-  "build/runtime.js": "/build/runtime.js",
-  "build/vendors~app.css": "/build/vendors~app.css",
-  "build/vendors~app.js": "/build/vendors~app.js",
-  "build/vendors~app~bootstrap.js": "/build/vendors~app~bootstrap.js",
-  "build/vendors~bootstrap.js": "/build/vendors~bootstrap.js"
-}
