@@ -1,7 +1,11 @@
 # table-operations
+
+A data table app that gets its data from a mariadb with search functionality using an elasticsearch server.
+
+Docker compose initialization script loads the data from fixtures and also populates elasticsearch.
+
 - Back end: symfony
 - Front end: vue 
-
 
 Contains 3 containers
 - mysql
