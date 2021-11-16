@@ -39,8 +39,9 @@ services:
     networks:
       - table-operations-net
 
-    volumes:
-      - /home/anil/Documents/table-operations:/table-operations
+    #uncomment this when developing on host
+    #volumes:
+    #  - /home/anil/Documents/table-operations:/table-operations
 
 
   mariadb:

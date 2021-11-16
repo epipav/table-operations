@@ -29,16 +29,17 @@ RUN php -m
 COPY ./ /table-operations/
 COPY ./.env /table-operations/.env
 
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install
 
 
-#build vue project
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
+RUN chmod uga+x /usr/local/bin/install-php-extensions && \
     install-php-extensions pdo_mysql
 
 RUN chmod a+x wait-for-it.sh
 
+#build install npm packages, build vue project
 RUN npm install && npm run dev
