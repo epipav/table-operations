@@ -19,22 +19,11 @@ class TableController extends AbstractController
      */
     public function index(Connection $connection)
     {
-        $words = ['sky', 'cloud', 'wood', 'rock', 'forest',
-        'mountain', 'breeze'];
-
-        $queryBuilder = $connection->createQueryBuilder();
-        $table = $queryBuilder->select('*')->from('product')->execute()->fetchAll();
-        return $this->render('home/index.html.twig', [
-            'table' => $table
-        ]);
+        return $this->render('home/index.html.twig');
     }
 
     public function getTable(Connection $connection)
     {
-        /*return $this->render('table/index.html.twig', [
-            'controller_name' => 'TableController',
-        ]);*/
-
         $queryBuilder = $connection->createQueryBuilder();
         $data = $queryBuilder->select('*')->from('product')->execute()->fetchAll();
 

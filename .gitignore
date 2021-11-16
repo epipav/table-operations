@@ -1,4 +1,5 @@
-var/cache/*
+var/cache/
 docker-compose.yaml
-node_modules/*
-.vscode/*
+node_modules/
+.vscode/
+vendor/
