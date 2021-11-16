@@ -8,7 +8,7 @@ Docker compose initialization script loads the data from fixtures and also popul
 - Front end: vue 
 
 Contains 3 containers
-- mysql
+- mariadb
 - elasticsearch server
 - symfony app + vue app
 
