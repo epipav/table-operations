@@ -17,7 +17,7 @@ Table search is wildcard in all columns.
 ## Dependencies
 
 NPM:
-- vue and its components
+- vue, vue-bootstrap
 - jquery
 - axios
 
