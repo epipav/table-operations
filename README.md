@@ -18,7 +18,6 @@ Table search is wildcard in all columns.
 
 NPM:
 - vue, vue-bootstrap
-- jquery
 - axios
 
 Composer:
